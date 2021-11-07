@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Layer 2.png" type="Texture" id=1]
+[ext_resource path="res://src/arial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/Rectangle 1 copy 3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/ProtoType.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.368627, 0.368627, 0.368627, 0 )
+
+[sub_resource type="Theme" id=3]
+TextEdit/colors/completion_background_color = Color( 0.282353, 0.282353, 0.286275, 1 )
+TextEdit/colors/line_number_color = Color( 1, 1, 1, 1 )
+TextEdit/styles/normal = SubResource( 4 )
+
+[node name="Info" type="Sprite"]
+position = Vector2( 449.932, 318.343 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="shadow" type="Label" parent="."]
+margin_left = -314.059
+margin_top = -307.438
+margin_right = 310.941
+margin_bottom = -191.438
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Project-Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = -310.0
+margin_top = -311.497
+margin_right = 310.0
+margin_bottom = -195.497
+custom_fonts/font = SubResource( 2 )
+text = "Project-Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titee" type="Label" parent="."]
+margin_left = -310.358
+margin_top = -270.295
+margin_right = 309.642
+margin_bottom = -154.295
+custom_fonts/font = SubResource( 2 )
+text = "ProType Menu"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = -266.338
+margin_top = -193.911
+margin_right = -152.338
+margin_bottom = -158.911
+text = "SAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cred" type="Node2D" parent="."]
+position = Vector2( 0, 71.9439 )
+
+[node name="type" type="Node2D" parent="."]
+position = Vector2( 0, 147.944 )
+
+[node name="Rectangle 1 copy 4" type="Sprite" parent="."]
+position = Vector2( -2.36356, 42.0403 )
+scale = Vector2( 3.45564, 2.72126 )
+texture = ExtResource( 3 )
+
+[node name="desc" type="TextEdit" parent="."]
+margin_left = -255.0
+margin_top = -155.056
+margin_right = 252.0
+margin_bottom = 235.944
+theme = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+show_line_numbers = true
+smooth_scrolling = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="editDescription"]

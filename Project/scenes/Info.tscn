@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/Layer 2.png" type="Texture" id=1]
+[ext_resource path="res://src/arial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/Rectangle 1 copy 3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Info.gd" type="Script" id=4]
+[ext_resource path="res://new_theme.tres" type="Theme" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 17
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Info" type="Sprite"]
+position = Vector2( 449.932, 318.343 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="shadow" type="Label" parent="."]
+margin_left = -314.0
+margin_top = -264.0
+margin_right = 315.0
+margin_bottom = -148.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Project-Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = -312.0
+margin_top = -267.0
+margin_right = 308.0
+margin_bottom = -151.0
+custom_fonts/font = SubResource( 2 )
+text = "Project-Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="size" type="Sprite" parent="."]
+position = Vector2( 224.139, 197.512 )
+texture = ExtResource( 3 )
+
+[node name="Rectangle 1 copy 3" type="Sprite" parent="size"]
+position = Vector2( -213.789, -209.916 )
+scale = Vector2( 3.45564, 1.60857 )
+texture = ExtResource( 3 )
+
+[node name="title2" type="Label" parent="size"]
+margin_left = -65.0561
+margin_top = -69.0
+margin_right = 68.9439
+margin_bottom = -41.0
+custom_fonts/font = SubResource( 3 )
+text = "Target & Size"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="data" type="TextEdit" parent="size"]
+margin_left = -67.2982
+margin_top = -43.7124
+margin_right = 66.7018
+margin_bottom = 57.2876
+custom_fonts/font = SubResource( 3 )
+text = "Android 1400x1200"
+readonly = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = -449.027
+margin_top = -229.189
+margin_right = -335.027
+margin_bottom = -194.189
+text = "Edit Description"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = -447.838
+margin_top = -192.324
+margin_right = -333.838
+margin_bottom = -157.324
+text = "Edit Sizes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="desc" type="TextEdit" parent="."]
+margin_left = -244.0
+margin_top = -111.0
+margin_right = 263.0
+margin_bottom = 96.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "this product is for managing products"
+readonly = true
+smooth_scrolling = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titee" type="Label" parent="."]
+margin_left = -314.596
+margin_top = -222.234
+margin_right = 305.404
+margin_bottom = -106.234
+custom_fonts/font = SubResource( 4 )
+text = "Information Menu"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="pressed" from="Button" to="." method="editDescription"]
+[connection signal="pressed" from="Button2" to="." method="editSize"]

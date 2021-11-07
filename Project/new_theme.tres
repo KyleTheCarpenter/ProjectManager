@@ -1,0 +1,4 @@
+[gd_resource type="Theme" format=2]
+
+[resource]
+TextEdit/colors/completion_background_color = Color( 0.317647, 0.309804, 0.341176, 1 )

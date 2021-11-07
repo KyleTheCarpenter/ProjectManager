@@ -1,0 +1,160 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Layer 2.png" type="Texture" id=1]
+[ext_resource path="res://src/arial.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/Rectangle 1 copy 3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/versions.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 2 )
+
+[node name="Info" type="Sprite"]
+position = Vector2( 449.932, 318.343 )
+texture = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Rectangle 1 copy 3" type="Sprite" parent="."]
+position = Vector2( 10.35, -111.201 )
+scale = Vector2( 3.45564, 0.403243 )
+texture = ExtResource( 3 )
+
+[node name="shadow" type="Label" parent="."]
+margin_left = -313.0
+margin_top = -264.0
+margin_right = 312.0
+margin_bottom = -148.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Project-Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = -310.0
+margin_top = -267.0
+margin_right = 310.0
+margin_bottom = -151.0
+custom_fonts/font = SubResource( 2 )
+text = "Project-Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="titee" type="Label" parent="."]
+margin_left = -311.417
+margin_top = -214.143
+margin_right = 308.583
+margin_bottom = -98.143
+custom_fonts/font = SubResource( 2 )
+text = "Version Menu"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = -449.027
+margin_top = -229.189
+margin_right = -335.027
+margin_bottom = -194.189
+text = "Update Version"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = -448.96
+margin_top = -181.099
+margin_right = -334.96
+margin_bottom = -146.099
+text = "Edit Credentials"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = -447.901
+margin_top = -129.186
+margin_right = -333.901
+margin_bottom = -94.1857
+text = "Product Stage"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="desc" type="Label" parent="."]
+margin_left = -250.0
+margin_top = -130.0
+margin_right = 272.0
+margin_bottom = -87.0
+custom_fonts/font = SubResource( 3 )
+text = "Current Version Debug 1.0"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cred" type="Node2D" parent="."]
+position = Vector2( 0, 71.9439 )
+
+[node name="Rectangle 1 copy 4" type="Sprite" parent="cred"]
+position = Vector2( 10.35, -111.201 )
+scale = Vector2( 3.45564, 0.403243 )
+texture = ExtResource( 3 )
+
+[node name="data" type="Label" parent="cred"]
+margin_left = -252.476
+margin_top = -127.416
+margin_right = 246.524
+margin_bottom = -97.4163
+custom_fonts/font = SubResource( 3 )
+text = "Made by KyleEarl @ Kyletc.com"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="type" type="Node2D" parent="."]
+position = Vector2( 0, 147.944 )
+
+[node name="Rectangle 1 copy 4" type="Sprite" parent="type"]
+position = Vector2( 10.35, -111.201 )
+scale = Vector2( 3.45564, 0.403243 )
+texture = ExtResource( 3 )
+
+[node name="data" type="Label" parent="type"]
+margin_left = -251.417
+margin_top = -126.357
+margin_right = 247.583
+margin_bottom = -96.3568
+custom_fonts/font = SubResource( 3 )
+text = "Project is in the Prototype Stage"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="editVersion"]
+[connection signal="pressed" from="Button2" to="." method="editCreds"]
+[connection signal="pressed" from="Button3" to="." method="changeProductStage"]
